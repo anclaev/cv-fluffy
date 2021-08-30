@@ -1,2 +1,11 @@
 # glowing-disco
-Вёрстка сайта-портфолио от bedimcode.
+
+Бойлерплейт веб-приложения.
+
+## Пакеты
+
+- Webpack
+- TypeScript
+- Babel (react, typescript)
+- SASS
+- ESLint
