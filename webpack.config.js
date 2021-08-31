@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const path = require("path")
 
 const HtmlWebpackPlugin = require("html-webpack-plugin")
@@ -45,10 +46,6 @@ const cssLoaders = (extra) => {
   const loaders = [
     {
       loader: MiniCssExtractPlugin.loader,
-      options: {
-        hmr: isDev,
-        reloadAll: true,
-      },
     },
     "css-loader",
   ]
@@ -90,7 +87,7 @@ module.exports = {
         use: cssLoaders(),
       },
       {
-        test: "/.s[ac]ss$/",
+        test: /\.s[ac]ss$/,
         use: cssLoaders("sass-loader"),
       },
       {
@@ -126,8 +123,8 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js"],
     alias: {
-      "@assets": path.resolve(__dirname, "./assets"),
-      "@styles": path.resolve(__dirname, "./styles"),
+      Assets: path.resolve(__dirname, "./src/assets"),
+      Styles: path.resolve(__dirname, "./src/styles"),
     },
   },
   optimization: optimization(),
